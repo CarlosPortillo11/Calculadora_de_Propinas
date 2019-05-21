@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculadora de Propinas</title>
+    <link rel="stylesheet" href="CSS/style.css" media="all" type="text/css">
+  </head>
+  <body class="body">
+    <div class="container">
+        <p class="titulo">Calculadora de Propinas</p>
+        <div class="fields">
+          <p class="total">Introduzca el total consumido: </p>
+          <br>
+          <input type="text" id="num1" class="field">
+          <br>
+          <p class="persons">Número de Personas:</p>
+          <br>
+          <input type="text" id="num2" class="field">
+          <br>
+          <p class="porcen">Porcentaje de propina a pagar:</p>
+          <br>
+          <input type="text" id="num3" class="field">
+          <br>
+          <br>
+          <input type="button" value="Calcular" id="boton" onclick="Myfunction()" class="boton">
+        </div>
+            <!--Resultado de Operaciones-->
+            <div class="result">
+              <p id="r1"></p>
+            </div>
+            <div class="result1">
+              <p id="r2"></p>
+            </div>
+        </div>
+        <script>
+
+                var result, result1;
+                //Toma de Datos
+                function Myfunction() {
+
+                  var dat1 = parseInt(document.getElementById("num1").value);
+                  var dat2 = parseInt(document.getElementById("num2").value);
+                  var dat3 = parseInt(document.getElementById("num3").value);
+                  var dat4 = dat3/100;
+                  //Calculo de Datos
+                    result = dat1*dat4;
+                    result1 = result/dat2;
+
+                  document.getElementById("r1").innerHTML = "La Propina Total es: $" + result;
+                  document.getElementById("r2").innerHTML = "La Propina por Persona es: $" + result1;
+                }
+        </script>
+  </body>
+</html>
